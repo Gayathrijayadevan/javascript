@@ -99,7 +99,7 @@ function sample9(){
         document.getElementById("h1").innerHTML=(y*0.05)+y
     }
     else{
-        document.getElementById("h1").innerHTML=y
+        document.getElementById("h1").innerHTML='no change in salary'
     }
 }
 
@@ -141,22 +141,22 @@ function sample11(){
     }
 }
 
-function sample12(){
-    c=document.getElementById("city").value
-    
-    if(c=='delhi'){
-        document.getElementById("h1").innerHTML='Red Fort'
+function sample12() {
+    const city = document.getElementById("city").value.toLowerCase();
+  
+    if (city === "delhi") {
+      document.getElementById("h1").innerHTML = "Red Fort";
     }
-     else if(c=='agra'){
-        document.getElementById("h1").innerHTML='Taj Mahal'
+     else if (city === "agra") {
+      document.getElementById("h1").innerHTML = "Taj Mahal";
     }
-     else if(c=='jaipur'){
-        document.getElementById("h1").innerHTML='Hava Mahal'
+     else if (city === "jaipur") {
+      document.getElementById("h1").innerHTML = "Hawa Mahal";
+    } 
+    else {
+      document.getElementById("h1").innerHTML = "Invalid city";
     }
-    else{
-        document.getElementById("h1").innerHTML='invalid city'
-    }
-}
+  }
 
 function sample13(){
     n=parseInt(document.getElementById("num").value)
@@ -185,8 +185,88 @@ function sample14(){
     }
 }
 
+function large_among4(){
+    a=parseInt(document.getElementById("fno").value)
+    b=parseInt(document.getElementById("sno").value)
+    c=parseInt(document.getElementById("tno").value)
+    d=parseInt(document.getElementById("for_no").value)
 
+    if(a>b && a>c && a>d){
+        document.getElementById("h1").innerHTML=a
+    }
+    else if(b>a && b>c && b>d){
+        document.getElementById("h1").innerHTML=b
+    }
+    else if(c>a && c>b && c>d){
+        document.getElementById("h1").innerHTML=c
+    }
+    else{
+        document.getElementById("h1").innerHTML=d
+    }
+}
 
+function loop(){
+    a=parseInt(document.getElementById("sno").value)
+    b=parseInt(document.getElementById("eno").value)
 
+    for(i=a;i<=b;i++){
+        console.log(i);
+        // alert(i)
+        // document.getElementById('h1').innerHTML=i
+        // document.write(i)
+
+    }
+}
+ function loop_sum(){
+    a=parseInt(document.getElementById("sno").value)
+    b=parseInt(document.getElementById("eno").value)
+    sum=0
+    for(i=a;i<=b;i++){
+        sum+=i  
+    }
+    document.getElementById('h1').innerHTML=sum
+ }
+
+ function loop_odd(){
+    a=parseInt(document.getElementById("sno").value)
+    b=parseInt(document.getElementById("eno").value)
+    odd=0
+    for(i=a;i<=b;i++){
+        if(i%2!=0)
+            console.log(i);
+    }
+ }
+
+function while_loop(){
+    i=parseInt(document.getElementById("sno").value)
+    b=parseInt(document.getElementById('eno').value)
+
+    while(i<=b){
+        console.log(i);
+        i++
+    }
+}
+
+function dowhile_loop(){
+    i=parseInt(document.getElementById("sno").value)
+    b=parseInt(document.getElementById('eno').value)
+    do{
+        console.log(i);
+        i++
+    }
+    while(i<=b)
+}
+
+function fact_dowhile(){
+    a=parseInt(document.getElementById("num").value)
+    fact=1
+    i=0
+    do{
+        fact=fact*i
+        console.log(fact)
+        i++
+    }
+    while(i<=a)
+}
 
 
