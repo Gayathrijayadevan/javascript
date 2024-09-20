@@ -92,14 +92,14 @@ function sample8(){
     }
 }
 
-function sample9(){
-    e=parseInt(document.getElementById("expr").value)
-    y=parseInt(document.getElementById("salry").value)
-    if(y>5){
-        document.getElementById("h1").innerHTML=(y*0.05)+y
-    }
-    else{
-        document.getElementById("h1").innerHTML='no change in salary'
+function sample9() {
+    e = parseInt(document.getElementById("expr").value);
+    y = parseInt(document.getElementById("salry").value);
+
+    if (e > 5) {
+        document.getElementById("h1").innerHTML = (y * 0.05) + y;
+    } else {
+        document.getElementById("h1").innerHTML = "No bonus. Original salary: " + y;
     }
 }
 
@@ -169,22 +169,18 @@ function sample13(){
     }
 }
 
-function sample14(){
-    p=parseInt(document.getElementById("price").value)
-    if (p>100000){
-        document.getElementById("h1").innerHTML=p*0.15  
-    }
-    else if(p>50000 && p<=100000){
-        document.getElementById("h1").innerHTML=p*0.10
-    }
-    else if(p<=50000){
-        document.getElementById("h1").innerHTML=p*0.05
-    }
-    else{
-        document.getElementById("h1").innerHTML='no tax'
+function sample14() {
+    p = parseInt(document.getElementById("price").value);
+    if (p > 100000) {
+        document.getElementById("h1").innerHTML = p * 0.15;
+    } else if (p > 50000 && p <= 100000) {
+        document.getElementById("h1").innerHTML = p * 0.10; // Corrected calculation
+    } else if (p <= 50000) {
+        document.getElementById("h1").innerHTML = p * 0.05;
+    } else {
+        document.getElementById("h1").innerHTML = p;
     }
 }
-
 function large_among4(){
     a=parseInt(document.getElementById("fno").value)
     b=parseInt(document.getElementById("sno").value)
@@ -260,10 +256,10 @@ function dowhile_loop(){
 function fact_dowhile(){
     a=parseInt(document.getElementById("num").value)
     fact=1
-    i=0
+    i=1
     do{
         fact=fact*i
-        console.log(fact)
+        document.getElementById("h1").innerHTML=fact
         i++
     }
     while(i<=a)
