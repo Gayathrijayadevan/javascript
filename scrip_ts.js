@@ -33,3 +33,17 @@ console.log(a.match("[a-z][0-9]"))
 console.log(a.match("[a-z0-9]"))
 console.log(b.search("HELLO"))
 
+
+
+function valid(){
+document.getElementById("phno_error").innerHTML=""
+
+name=document.getElementById("name").value 
+phno=document.getElementById("phno").value
+email=document.getElementById("email").value 
+console.log(name, phno, email);
+if (phno.length!=10){
+    document.getElementById("phno_error").innerHTML ="*Invalid number"
+}
+
+}
