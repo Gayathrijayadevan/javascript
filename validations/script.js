@@ -17,7 +17,7 @@ function valid(){
         }
     }
     
-    if(pin.length!=6)
+    if(pin.length!=6){
         document.getElementById("pin_error").innerHTML="*invalid pin"
     }
     
