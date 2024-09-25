@@ -4,12 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>work1</title>
-    <script src="./scrt.js"></script>
 </head>
 <body>
     <link rel="stylesheet" href="./style.css">
     <div class="container">
-        <table>
+        <table id="peopletable">
             <thead>
                 <tr>
                     <th>Id</th>
@@ -23,14 +22,25 @@
         </table>
     </div>
 
-   <form>
+   <form id="submit_form">
         <label for="id">Id</label>
         <input type="text" id="id"><br><br>
         <label for="name">Name</label>
         <input type="text" id="name"><br><br>
         <label for="age">Age</label>
         <input type="number" id="age"><br><br>
-        <button>submit</button>
+        <input type="submit" value="submit" id="submit_btn">
    </form>
+
+   <form id="edit_form">
+    <label for="id">Id</label>
+    <input type="text" id="id"><br><br>
+    <label for="name">Name</label>
+    <input type="text" id="name"><br><br>
+    <label for="age">Age</label>
+    <input type="number" id="age"><br><br>
+    <input type="submit" value="submit" id="submit_btn">
+</form>
+   <script src="./scrt.js"></script>
 </body>
 </html>

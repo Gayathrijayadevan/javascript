@@ -3,16 +3,25 @@
     height: 50vh;
     justify-content: center;
     /* background-color: aquamarine; */
+    border-collapse: collapse;
 }
 table{
     margin-left: 50px;
     width: 80%;
 }
-table tr th{
+ tr th{
     border: 1px solid;
 }
 thead{
     height: 50px;
+}
+tbody{
+    align-items: center;
+    /* margin-left: 50px; */
+    /* background-color: blue; */
+}
+tbody tr td{
+    border: 1px solid;
 }
 form{
     width: 50%;
@@ -20,8 +29,12 @@ form{
     /* display: flex; */
     /* background-color: blueviolet; */
 }
-button{
+#submit_btn{
     background-color: black;
     color: antiquewhite;
     margin-left: 100px;
+}
+
+#edit_form{
+    display: none;
 }
