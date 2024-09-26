@@ -23,7 +23,21 @@ function display(){
         t_age.textContent=element.age
         t_row.appendChild(t_age)
 
+        // creating another row to add edit button 
+        const edit_td=document.createElement('td')
+
+        // creating the button 
+        const edit_btn=document.createElement('button')
+        edit_btn.textContent='edit'
+
+        // calling the edit_frm function when button is clicked 
+        edit_btn.onclick=function(){
+            edit_frm(element.name)
+        }
         
+        edit_td.appendChild(edit_btn)
+        t_row.appendChild(edit_td)
+
         t_var.appendChild(t_row)
     });
 }
@@ -50,5 +64,41 @@ document.getElementById('submit_form').addEventListener('submit',function(event)
     // calling the function to see the result on the table 
     display()
 
+})
+// declaring a global variable edit_name to store the name retrived through edit_frmand use it other func 
+let edit_name=''
+// creating a func named edit_frm to edit the table 
+function edit_frm(name){
+    console.log('editing',name);
+    document.getElementById('edit_form').style.display='block'
+    document.getElementById('submit_form').style.display='none'
+
+    // we have the name of the person  whose data has to be updated 
+    const edit_data=d.find(user=>user.name==name)
+    document.getElementById('e_id').value=edit_data.id
+    document.getElementById('e_name').value=edit_data.name
+    document.getElementById('e_age').value=edit_data.age
+
+    edit_name=name
+}
+
+// selecting the edit form and adding an eventlistener
+document.getElementById('edit_form').addEventListener('submit',function(event){
+    event.preventDefault()
+    // store the inputed value in variables 
+    const e_id=document.getElementById('e_id').value
+    const e_name=document.getElementById('e_name').value
+    const e_age=document.getElementById('e_age').value
+    // update the data in the table using map 
+    d=d.map(user=>{
+        if(user.name==edit_name){
+            // returning the value after replacing the original data with updated one ,here '...user' hold the 3 items 
+            return{...user,id:e_id,name:e_name,age:e_id}
+        }
+        return user
+    })
+     document.getElementById('edit_form').style.display='none'
+    document.getElementById('submit_form').style.display='block'
+    display()
 })
 display();
