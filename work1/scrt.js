@@ -30,6 +30,17 @@ function display(){
         const edit_btn=document.createElement('button')
         edit_btn.textContent='edit'
 
+        // creating a button to delete 
+        const del_td=document.createElement('td')
+        const del_btn=document.createElement('button')
+        del_btn.textContent='delete'
+
+        del_btn.onclick=function(){
+            delete_data(element.name)
+        }
+        del_td.appendChild(del_btn)
+        t_row.appendChild(del_td)
+
         // calling the edit_frm function when button is clicked 
         edit_btn.onclick=function(){
             edit_frm(element.name)
@@ -65,6 +76,15 @@ document.getElementById('submit_form').addEventListener('submit',function(event)
     display()
 
 })
+// creating function to delete 
+function delete_data(name){
+    d=d.filter(user=>{
+        if(user.name!=name){
+            return user
+        }
+    })
+    display()
+}
 // declaring a global variable edit_name to store the name retrived through edit_frmand use it other func 
 let edit_name=''
 // creating a func named edit_frm to edit the table 
@@ -102,3 +122,4 @@ document.getElementById('edit_form').addEventListener('submit',function(event){
     display()
 })
 display();
+
