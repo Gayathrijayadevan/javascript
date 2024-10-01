@@ -113,7 +113,7 @@ document.getElementById('edit_form').addEventListener('submit',function(event){
     d=d.map(user=>{
         if(user.name==edit_name){
             // returning the value after replacing the original data with updated one ,here '...user' hold the 3 items 
-            return{...user,id:e_id,name:e_name,age:e_id}
+            return{...user,id:e_id,name:e_name,age:e_age}
         }
         return user
     })

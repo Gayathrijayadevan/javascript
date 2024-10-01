@@ -1,4 +1,5 @@
-d=[]
+d=[{id:1,name:'jai',age:20,email:'jai@gmail.com',course:'python',date:'2024/9/24'},{id:2,name:'john',age:21,email:'john@gamil.com',course:'python',date:'2024/9/4'},{id:3,name:'sanu',age:20,email:'sanu@gmail.com',course:'mern',date:'2024/9/22'}]
+
 function display(){
     const s_var=document.querySelector('#studenttable tbody')
     s_var.innerHTML=''
@@ -34,7 +35,7 @@ function display(){
         edit_btn.textContent='edit'
 
         edit_btn.onclick=function(){
-            edit_frm(element.name)
+            edit_fom(element.name)
         }
         edit_td.appendChild(edit_btn)
         t_row.appendChild(edit_td)
@@ -76,13 +77,42 @@ document.getElementById('reg_form').addEventListener('submit',function(event){
 
     display()
 })
-function delete_data(name){
-    d=d.filter(user=>{
-        if(user.name!=name){
-            return user
-        }
-    })
-    display()
+
+let ed_name=''
+function edit_fom(name){
+    console.log('editing',name);
+    document.getElementById('edit_form').style.display='block'
+    document.getElementById('reg_form').style.display='none'
+
+    const edit_data=d.find(user=>user.name==name)
+    document.getElementById('e_id').value=edit_data.id
+    document.getElementById('e_name').value=edit_data.name
+    document.getElementById('e_age').value=edit_data.age
+    document.getElementById('e_email').value=edit_data.email
+    document.getElementById('e_cour').value=edit_data.course
+    document.getElementById('e_date').value=edit_data.date
+
+    ed_name=name
 }
+
+document.getElementById('edit_form').addEventListener('edit',function(event){
+    event.preventDefault()
+
+    const e_id=document.getElementById('e_id').value
+    const e_name=document.getElementById('e_name').value
+    const e_age=document.getElementById('e_age').value
+    const e_email=document.getElementById('e_email').value
+    const e_course=document.getElementById('e_cour').value
+    const e_date=document.getElementById('e_date').value
+    d=d.map(user=>{
+        if(user.name==ed_name){
+            return{...user,id:e_id,name:e_name,age:e_age,email:e_email,course:e_course,date:e_date }
+        }
+        return user
+    })
+    document.getElementById('edit_form').style.display='none'
+    document.getElementById('reg_form').style.display='block'
+    display()
+})
 
 display();
