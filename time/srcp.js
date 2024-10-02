@@ -15,22 +15,30 @@ const a=setInterval(display,2000)
 //     }
 // },2000)
 
-function demo(){
-    const main=document.querySelector('.main')
-    const div=document.createElement('div')
-    let count=59
-    let min=4
-    let b=setInterval(function(){
-    div.innerHTML=`<h1 style="color:red"> ${min}:${count}</h2>`
-    count--
-    if(count==0){
-        clearInterval(b)
-        console.log('finish');
-         div.innerHTML=`<h1 style="color:red">completed</h1>`
-        
-    }
-},1000)
-min--
-    main.appendChild(div)
-}
-demo()
+function demo() {
+    const main = document.querySelector('.main');
+    const div = document.createElement('div');
+    let count = 59;
+    let min = 4;
+    let isRunning = false;
+  
+    let b = setInterval(function() {
+      if (isRunning) {
+        div.innerHTML = `<h1 style="color:red">Timer:${min}:${count}</h1>`;
+        count--;
+        if (count == 0) {
+          min--;
+          if (min == 0) {
+            isRunning = false;
+            div.innerHTML = `<h1 style="color:red">completed</h1>`;
+          } else {
+            count = 59;
+          }
+        }
+      }
+    }, 1000);
+  
+    isRunning = true;
+    main.appendChild(div);
+  }
+  demo();
