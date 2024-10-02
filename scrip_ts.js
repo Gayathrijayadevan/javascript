@@ -13,38 +13,39 @@
 // }
 // data(10,100)
 
-a="welcome to all12"
-b="          HELLO WORLD         "
+// a="welcome to all12"
+// b="          HELLO WORLD         "
 
-console.log(a)
-console.log(a[5]);
-console.log(a.length)
-console.log(a.toUpperCase())
-console.log(b.toLowerCase())
-console.log(b.trim())
-console.log(b.trimStart(),'abb');
-console.log(b.trimEnd(),'mmk')
-console.log(a.charAt(0))
-console.log(a.charCodeAt(0))
-console.log(a.slice(2,6))
+// console.log(a)
+// console.log(a[5]);
+// console.log(a.length)
+// console.log(a.toUpperCase())
+// console.log(b.toLowerCase())
+// console.log(b.trim())
+// console.log(b.trimStart(),'abb');
+// console.log(b.trimEnd(),'mmk')
+// console.log(a.charAt(0))
+// console.log(a.charCodeAt(0))
+// console.log(a.slice(2,6))
 
-console.log(a.match("to"))
-console.log(a.match("[a-z][0-9]"))
-console.log(a.match("[a-z0-9]"))
-console.log(b.search("HELLO"))
+// console.log(a.match("to"))
+// console.log(a.match("[a-z][0-9]"))
+// console.log(a.match("[a-z0-9]"))
+// console.log(b.search("HELLO"))
 
 
 
-function valid(){
-document.getElementById("phno_error").innerHTML=""
+// function valid(){
+// document.getElementById("phno_error").innerHTML=""
 
-name=document.getElementById("name").value 
-phno=document.getElementById("phno").value
-email=document.getElementById("email").value 
-console.log(name, phno, email);
-if (phno.length!=10){
-    document.getElementById("phno_error").innerHTML ="*Invalid number"
-}
+// name=document.getElementById("name").value 
+// phno=document.getElementById("phno").value
+// email=document.getElementById("email").value 
+// console.log(name, phno, email);
+// if (phno.length!=10){
+//     document.getElementById("phno_error").innerHTML ="*Invalid number"
+// }
 
-}
+// }
+
 

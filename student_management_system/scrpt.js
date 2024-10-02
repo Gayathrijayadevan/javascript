@@ -78,6 +78,15 @@ document.getElementById('reg_form').addEventListener('submit',function(event){
     display()
 })
 
+function delete_data(name){
+    d=d.filter(user=>{
+        if(user.name!=name){
+            return user
+        }
+    })
+    display()
+}
+
 let ed_name=''
 function edit_fom(name){
     console.log('editing',name);
@@ -95,7 +104,7 @@ function edit_fom(name){
     ed_name=name
 }
 
-document.getElementById('edit_form').addEventListener('edit',function(event){
+document.getElementById('edit_form').addEventListener('submit',function(event){
     event.preventDefault()
 
     const e_id=document.getElementById('e_id').value
