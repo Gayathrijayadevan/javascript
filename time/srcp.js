@@ -18,16 +18,16 @@ const a=setInterval(display,2000)
 function demo() {
     const main = document.querySelector('.main');
     const div = document.createElement('div');
-    let count = 59;
-    let min = 4;
-    let isRunning = false;
-  
+    let count = 59
+    let min = 3
+    let isRunning = false
+
     let b = setInterval(function() {
       if (isRunning) {
-        div.innerHTML = `<h1 style="color:red">Timer:${min}:${count}</h1>`;
-        count--;
+        div.innerHTML = `<h1 style="color:red">Timer: ${min}:${count}</h1>`;
+        count--
         if (count == 0) {
-          min--;
+          min--
           if (min == 0) {
             isRunning = false;
             div.innerHTML = `<h1 style="color:red">completed</h1>`;
