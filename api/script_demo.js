@@ -3,6 +3,8 @@ fetch('https://dummyjson.com/products').then(response=>response.json()).then(dat
         // console.log(element.title);
         const row=document.querySelector(".row")
         const col=document.createElement("div")
+        const card=document.getElementById("div")
+        card.classList.add('card')
         col.classList.add('col-lg-4')
         // console.log(element.title);
         
